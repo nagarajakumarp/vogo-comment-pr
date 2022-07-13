@@ -84,10 +84,6 @@ const getClient = () => {
     throw new Error('No github token provided')
   }
 
-  if (!context.issue.number) {
-    throw new Error('This is not a PR or commenting is disabled.')
-  }
-
   const client = getOctokit(githubToken)
   if (!client) {
     throw new Error('Client couldn\'t be created, make sure that token is correct.')
